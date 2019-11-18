@@ -16,7 +16,7 @@
 		<form method="POST" action="<c:url value='/login' />">
 			<label for="code">社員番号</label><br /> <input type="text" name="code"
 				value="${code}" /> <br />
-			<br /> <label for="password">パスワード</label><br /> <input type="text"
+			<br /> <label for="password">パスワード</label><br /> <input type="password"
 				name="password" name="password" /> <br />
 			<br /> <input type="hidden" name="_token" value="${_token}" />
 			<button type="submit">ログイン</button>
