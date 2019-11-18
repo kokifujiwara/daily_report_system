@@ -17,7 +17,7 @@ import models.Report;
  */
 @WebServlet("/reports/new")
 public class ReportsNewServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -27,17 +27,18 @@ public class ReportsNewServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	       Report r = new Report();
-	        r.setReport_date(new Date(System.currentTimeMillis()));
-	        request.setAttribute("report", r);
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("_token", request.getSession().getId());
 
-	        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/reports/new.jsp");
-	        rd.forward(request, response);
-	}
+        Report r = new Report();
+        r.setReport_date(new Date(System.currentTimeMillis()));
+        request.setAttribute("report", r);
+
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/reports/new.jsp");
+        rd.forward(request, response);
+    }
 
 }
