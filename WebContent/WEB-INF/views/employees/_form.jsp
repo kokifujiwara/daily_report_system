@@ -22,7 +22,7 @@
 <br />
 
 <label for="password">パスワード</label><br />
-<input type="text" name="password" />
+<input type="password" name="password" />
 <br />
 <br />
 
